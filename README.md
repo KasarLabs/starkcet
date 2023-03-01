@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.ibb.co/P4wgv99/t-l-chargement.png" height="120" width="100">
+  <img src="https://i.ibb.co/P4wgv99/t-l-chargement.png" height="140" width="100">
   <br />
   <a href="https://github.com/kasarlabs/starkcet/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
   ·
@@ -26,7 +26,7 @@ This repo contains the infra of [Starkcet](https://starkcet.com) a Geth anti-flo
 The faucet works in 4 simple steps as follows
 
 <div align="center">
-  <img src="https://i.ibb.co/tMvxHnX/starkcet-Schema.png" height="300" width="500">>
+  <img src="https://i.ibb.co/tMvxHnX/starkcet-Schema.png" height="300" width="600">
 </div>
 
 - (1) A transaction is sent to a smart contract deployed on the L1 invoquing gaz costs for the user

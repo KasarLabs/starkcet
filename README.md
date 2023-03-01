@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.ibb.co/bPKp1wb/starkcet.png" height="100" width="100">
+  <img src="https://i.ibb.co/P4wgv99/t-l-chargement.png" height="100" width="100">
   <br />
   <a href="https://github.com/kasarlabs/starkcet/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
   ·
@@ -19,16 +19,20 @@
 
 # Starkcet
 
-This repo contains the infra of Starkcet a Geth anti-flood faucet at the disposal of the developers of the Starknet network. The purpose of this faucet is to never run out of tokens and to avoid any attack without going through sybil cencorship centralized verification. It works by providing a fraction of Tokens accessible only via an L1 verification invoquing gaz costs.
+This repo contains the infra of [Starkcet](https://starkcet.com) a Geth anti-flood faucet at the disposal of the developers of the Starknet network. The purpose of this faucet is to never run out of tokens and to avoid any attack without going through sybil cencorship centralized verification. It works by providing a fraction of Tokens accessible only via an L1 verification invoquing gaz costs.
 
 ## 💻 System
 
 The faucet works in 4 simple steps as follows
 
 <div align="center">
-  <img src="https://i.ibb.co/tMvxHnX/starkcet-Schema.png">
+  <img src="https://i.ibb.co/tMvxHnX/starkcet-Schema.png" height="300" width="300">>
 </div>
 
+- (1) A transaction is sent to a smart contract deployed on the L1 invoquing gaz costs for the user
+- (2) It will then trigger an event to the faucet if the verification went well
+- (3) The faucet will then send the goerli tokens to the corresponding L2 address
+- (4) finaly once the transaction is successful the user will be notified 
 
 ## 🌐 Contact us
 

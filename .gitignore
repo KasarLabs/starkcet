@@ -1,0 +1,6 @@
+node_modules
+.env
+openzeppelin
+starknetjs
+package-lock.json
+build

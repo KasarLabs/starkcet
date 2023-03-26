@@ -9,7 +9,7 @@ import styled from 'styled-components';
 function Footer() {
   return (
     <Main>
-      <p>Powered by <a href="https://starknet.io" target={'_blank'} className="outlineLink" rel="noreferrer noopener">Starknet</a> and <a className="outlineLink" rel="noreferrer noopener">KasarLabs</a></p>
+      <p>Powered by <a href="https://starknet.io" target={'_blank'} className="outlineLink" rel="noreferrer noopener">Starknet</a> and <a href="https://kasar.io/" target={'_blank'} className="outlineLink" rel="noreferrer noopener">KasarLabs</a></p>
       <LogoRaw>
         <a href="https://twitter.com/kasarlabs"> <FontAwesomeIcon icon={faTwitter} size="1x" color='#000' /></a>
         <a href="https://github.com/kasarlabs"> <FontAwesomeIcon icon={faGithub} size="1x" color='#000' /></a>

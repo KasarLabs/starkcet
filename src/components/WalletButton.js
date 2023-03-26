@@ -11,7 +11,8 @@ export default function WalletButton() {
     return (
       <Button
         variant='contained'
-        sx={{ margin: '0px 10px', color: '#fff' }}
+        style={{ minWidth: '120px' }}
+        sx={{ margin: '0px 10px', color: '#fff', minWidth: '320px' }}
         onClick={() => {
           window.open("https://metamask.io/download/", "_blank");
         }}
@@ -22,6 +23,7 @@ export default function WalletButton() {
   if (!isConnected) {
     return (
       <Button
+        style={{ minWidth: '120px' }}
         variant='contained'
         onClick={() => { connect() }}
         md={{ fontSize: '10px' }}

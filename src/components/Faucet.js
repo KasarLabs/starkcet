@@ -89,8 +89,8 @@ function Faucet() {
         {hasWallet && isConnected &&
           (
             chainId === goodNetwork ?
-              <Button color='primary' variant="contained" onClick={() => { beforeContractInteraction(starkcetFaucet()) }}>Get Tokens</Button> :
-              <Button color='error' variant="contained" onClick={() => { changeNetwork() }}>Change Network</Button>
+              <Button style={{ minWidth: '120px' }} color='primary' variant="contained" onClick={() => { beforeContractInteraction(starkcetFaucet()) }}>Get Tokens</Button> :
+              <Button style={{ minWidth: '120px' }} color='error' variant="contained" onClick={() => { changeNetwork() }}>Change Network</Button>
           )
         }
         {hasWallet && !isConnected &&

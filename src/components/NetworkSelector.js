@@ -17,7 +17,7 @@ export default function NetworkSelector() {
 
     return (
         <>
-            <FormControl>
+            <FormControl style={{ minWidth: '120px' }}>
                 <InputLabel>Network</InputLabel>
                 <Select
                     value={network}
@@ -26,7 +26,7 @@ export default function NetworkSelector() {
 
                 >
                     <MenuItem value={'Testnet 1'}>Testnet 1</MenuItem>
-                    <MenuItem value={'Testnet 2'}>Testnet 2</MenuItem>
+                    {/* <MenuItem value={'Testnet 2'}>Testnet 2</MenuItem> */}
                 </Select>
             </FormControl>
         </>

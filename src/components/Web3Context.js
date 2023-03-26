@@ -1,15 +1,12 @@
 import React, { useContext, useState } from "react";
-import { ethers } from 'ethers';
 import { toast } from 'react-toastify';
-import contractAbi from "../utils/abis/contract_abi.json"
 
 
 
 const Web3Context = React.createContext()
 const goodNetwork = 1
 const notifyError = function (text) { toast.error(text); }
-const notify = (text) => toast(text);
-const contractAddress = "0x9A0CA850E9c3d2d24b89897529380d731E046eC9"
+
 
 
 export function useWeb3() {
@@ -121,7 +118,6 @@ export default function Web3Provider({ children }) {
         if (isConnected) {
             try { await callBack }
             catch (err) {
-                toast.error(err.message);
                 console.log(err.message);
             }
         }

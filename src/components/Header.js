@@ -1,17 +1,10 @@
-import { useState } from "react"
-import { ethers } from "ethers"
-import { ToastContainer, toast } from 'react-toastify';
-import contractAbi from "../utils/abis/contract_abi.json"
 import WalletButton from './WalletButton';
 import './style/index.css'
 import ethLogo from '../assets/kasar_logo.png'
 import styled from "styled-components"
-import { useWeb3 } from "./Web3Context";
 
 
 export default function Header() {
-  const [labelOpen, setLabelOpen] = useState(false);
-  const [address, setAddress, hasWallet, setHasWallet, isConnected, setIsConnected, chainId, setchainID, network, setNetwork, connect, handleChainChanged, handleAccountsChanged, changeNetwork, goodNetwork] = useWeb3();
 
   return (
     <Main>
@@ -61,23 +54,6 @@ const Navigation = styled.div`
   }
 `
 
-const NetWorkButton = styled.button`
-  border: 1px solid gray;
-  border-radius: 10px;
-  background-color: #ffffff;
-  padding: 12px 30px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-  :hover {
-    background-color: #000;
-    color: #fff;
-  }
-`
 
 const Image = styled.img`
   width: 50px;
@@ -86,24 +62,4 @@ const Image = styled.img`
     width: 35px;
     height: 35px;
   }
-`
-const Labels = styled.div`
-  position: absolute;
-  border: 1px solid gray;
-  border-radius: 10px;
-  background-color: #fff;
-  top: 60px;
-  right: 70px;
-`
-
-const Label = styled.div`
-  padding: 10px;
-  border-radius: 10px;
-  transition: 0.3s;
-  cursor: pointer;
-  :hover {
-    background-color: #000;
-    color: #fff;
-  }
-
 `

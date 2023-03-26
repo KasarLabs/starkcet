@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { styled } from '@mui/material/styles';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -21,7 +20,7 @@ const steps = [
 
 
 export default function HorizontalStepper() {
-  const [tx, setTx, step, setStep] = useTransaction()
+  const [step, ...rest] = useTransaction()
 
   return (
     <StepperContainer>

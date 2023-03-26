@@ -1,12 +1,11 @@
 import React from 'react'
-// import Button from './Button'
 import Button from '@mui/material/Button';
 import { useWeb3 } from "./Web3Context";
 
 
 export default function WalletButton() {
 
-  const [address, setAddress, hasWallet, setHasWallet, isConnected, setIsConnected, chainId, setchainID, network, setNetwork, connect, handleChainChanged, handleAccountsChanged, changeNetwork, goodNetwork] = useWeb3();
+  const [address, , hasWallet, , isConnected, , chainId, , , , connect, , , changeNetwork, goodNetwork] = useWeb3();
   if (!hasWallet) {
     return (
       <Button
@@ -40,10 +39,6 @@ export default function WalletButton() {
   }
 
   return (
-    // <Button
-    //     onClick={hasWallet ? connect : () => { }}
-    //     text={`0x${address.slice(2, 5)}...${address.substr(address.length - 3)}`}
-    // />
     <Button
       sx={{ textTransform: "none" }}
       variant='contained'

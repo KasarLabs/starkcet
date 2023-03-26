@@ -3,7 +3,6 @@ import { ethers } from 'ethers';
 import contractAbi from "../utils/abis/contract_abi.json"
 import styled from 'styled-components';
 import Skeleton from '@mui/material/Skeleton';
-import TableRow from '@mui/material/TableRow';
 import './style/index.css'
 
 const provider = new ethers.providers.JsonRpcProvider("https://ethereum.publicnode.com");
@@ -26,22 +25,6 @@ function secondsToDhms(seconds) {
   if (s > 0) return s + (s === 1 ? " second" : " seconds")
   return null;
 }
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  border: 0,
-  borderColor: 'black',
-  '&:nth-of-type(odd)': {
-    backgroundColor: "rgba(200, 200, 200, 0.3)",
-  },
-  '&:nth-of-type(even)': {
-    backgroundColor: "rgba(150, 150, 150, 0.3)",
-  },
-}));
-
-const TitleRow = styled(TableRow)(({ theme }) => ({
-  backgroundColor: "rgba(100, 100, 100, 0.4)",
-  border: 0,
-}));
 
 function LastTxTable(props) {
   const { data } = props;

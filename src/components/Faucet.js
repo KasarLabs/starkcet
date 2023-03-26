@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { ethers } from 'ethers';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -14,9 +14,6 @@ import WalletButton from './WalletButton';
 
 
 const notifyError = function (text) { toast.error(text); }
-const notify = (text) => toast(text);
-const tokenOutput = 10;
-const network = 'Goerli 1'
 const contractAddress = "0x9A0CA850E9c3d2d24b89897529380d731E046eC9"
 
 const starknetProvider = new starknet.Provider({
@@ -35,13 +32,13 @@ const LinkToStarknetTx = (hash) => (
 );
 
 function Faucet() {
-  const [labelOpen, setLabelOpen] = useState(false);
+  // const [labelOpen, setLabelOpen] = useState(false);
   const [addressInput, setAddressInput] = useState("")
-  const [address, setAddress, hasWallet, setHasWallet, isConnected, setIsConnected, chainId, setchainID, network, setNetwork, connect, handleChainChanged, handleAccountsChanged, changeNetwork, goodNetwork, beforeContractInteraction] = useWeb3();
-  const [tx, setTx, step, setStep] = useTransaction()
+  const [, , hasWallet, , isConnected, , chainId, , network, , , , , changeNetwork, goodNetwork, beforeContractInteraction] = useWeb3();
+  const [, setStep] = useTransaction()
 
   async function starkcetFaucet() {
-    if (addressInput.length != 66) {
+    if (addressInput.length !== 66) {
       notifyError('Wrong Starknet address!');
       return;
     }
@@ -56,7 +53,6 @@ function Faucet() {
     let networkId
     network === "Testnet 1" ? networkId = 1 : networkId = 2
     const tx = await contract.starkcetFaucet(addressInput, networkId);
-    setStep(1)
     toast.promise(
       tx.wait(),
       {
@@ -65,6 +61,7 @@ function Faucet() {
         error: 'Transaction failed 🤯 \n '
       }
     )
+    setStep(1)
     const receipt = await tx.wait()
     setStep(2)
     const id = parseInt(receipt.logs[0].data, 16)
@@ -74,7 +71,7 @@ function Faucet() {
     console.log("data received :")
     console.log(data._res._hash)
     setStep(3)
-    const starknetReceipt = await starknetProvider.waitForTransaction(data._res._hash)
+    await starknetProvider.waitForTransaction(data._res._hash)
     setStep(4)
   };
 

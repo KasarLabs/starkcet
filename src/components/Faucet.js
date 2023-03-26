@@ -17,7 +17,7 @@ const notifyError = function (text) { toast.error(text); }
 const notify = (text) => toast(text);
 const tokenOutput = 10;
 const network = 'Goerli 1'
-const contractAddress = "0x7Ad1508CEDf88B06Ca1bc5460EF7bd790f6E2D51"
+const contractAddress = "0x9A0CA850E9c3d2d24b89897529380d731E046eC9"
 
 const starknetProvider = new starknet.Provider({
   sequencer: {

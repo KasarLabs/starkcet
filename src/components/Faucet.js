@@ -112,11 +112,17 @@ const FaucetContainer = styled.div`
   width: 95%;
   justify-content: space-between;
   gap: 10px;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 `
 
 const Col = styled.div`
   display: flex;
   gap: 10px;
+  @media (max-width: 1000px) {
+    justify-content: center;
+  }
 `
 
 const ClickableLink = styled.div`

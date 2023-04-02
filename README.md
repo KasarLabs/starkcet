@@ -39,5 +39,5 @@ The faucet works in 4 simple steps as follows
 This is a [KasarLabs](https://twitter.com/kasarlabs) project If you need any help about Starkcet or anything else related to Starknet please feel free to open an issue or contact us via telegram [here](https://t.me/antiyro).
 
 <p align="center">
-  <img src="https://i.ibb.co/BNjdJdg/Kasarlabs-logo.png" alt="Sublime's custom image" height="70" width="70"/>
+  <img src="https://i.ibb.co/zrmG8Ys/logo-kasar-1.png" alt="Sublime's custom image" height="70" width="70"/>
 </p>

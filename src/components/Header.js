@@ -1,6 +1,6 @@
 import WalletButton from './WalletButton';
 import './style/index.css'
-import ethLogo from '../assets/kasar_logo.png'
+import kasarLogo from '../assets/kasar_logo.png'
 import styled from "styled-components"
 
 
@@ -16,7 +16,7 @@ export default function Header() {
       </MainTitle>
       <Navigation>
         <WalletButton />
-        <a href="https://kasar.io"><Image src={ethLogo} alt="Avatar" /></a>
+        <a href="https://kasar.io"><Image src={kasarLogo} alt="Avatar" /></a>
       </Navigation>
     </Main>
   )

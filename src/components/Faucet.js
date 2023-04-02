@@ -14,7 +14,7 @@ import WalletButton from './WalletButton';
 
 
 const notifyError = function (text) { toast.error(text); }
-const contractAddress = "0x9A0CA850E9c3d2d24b89897529380d731E046eC9"
+const contractAddress = "0xA627B6407398ADfeA322Bc5B858A05585E35D1de"
 
 const starknetProvider = new starknet.Provider({
   sequencer: {

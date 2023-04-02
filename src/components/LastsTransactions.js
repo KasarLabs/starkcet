@@ -6,7 +6,7 @@ import Skeleton from '@mui/material/Skeleton';
 import './style/index.css'
 
 const provider = new ethers.providers.JsonRpcProvider("https://ethereum.publicnode.com");
-const contractAddress = "0x9A0CA850E9c3d2d24b89897529380d731E046eC9"
+const contractAddress = "0xA627B6407398ADfeA322Bc5B858A05585E35D1de"
 
 function createData(hash, network, to, time) {
   return { hash, network, to, time };
@@ -47,13 +47,13 @@ function LastTxTable(props) {
       {rows.map((row) => (
         <div key={row.hash}>
           <STableRow>
-            <ClickableLink data-label="Job Id" onClick={() => window.open('https://goerli.etherscan.io/tx/' + row.hash)}>
+            <ClickableLink data-label="Job Id" onClick={() => window.open('https://etherscan.io/tx/' + row.hash)}>
               {`0x${row.hash.slice(2, 5)}...${row.hash.substr(row.hash.length - 3)}`}
             </ClickableLink>
             <div data-label="Customer Name">
               {'Testnet ' + row.network}
             </div>
-            <ClickableLink data-label="Amount" onClick={() => window.open('https://testnet.starkscan.co/contract/' + row.to)}>
+            <ClickableLink data-label="Amount" onClick={() => window.open('https://goerli.voyager.online/contract/' + row.to)}>
               {`0x${row.to.slice(2, 5)}...${row.to.substr(row.to.length - 3)}`}
             </ClickableLink>
             <div data-label="Payment Status">
@@ -87,7 +87,7 @@ export default function LastsTransactions() {
           ethers.utils.id("StarkcetTx(address,bytes32,uint8,uint256)")]
       }
       const currentBlockNumber = await provider.getBlockNumber();
-      let events = await contract.queryFilter(filter, (currentBlockNumber - 50000));
+      let events = await contract.queryFilter(filter, (currentBlockNumber - 20000));
       events = events.slice(-5)
       events.reverse()
       for (let event of events) {

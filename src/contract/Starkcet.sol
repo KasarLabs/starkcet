@@ -11,28 +11,19 @@ interface IERC20 {
 }
 
 contract Starkcet is Ownable, Pausable {
-    struct Tx {
-        address from;
-        bytes32 to;
-        uint8 network;
-    }
-
-    uint256 public lastIdx;
-    mapping(uint256 => Tx) public transaction;
+    uint64 public lastIdx;
     event StarkcetTx(
         address indexed _from,
         bytes32 indexed _to,
         uint8 indexed _network,
-        uint256 _idx
+        uint64 _idx
     );
 
-    function starkcetFaucet(bytes32 _StarknetAddress, uint8 _network)
-        public
-        whenNotPaused
-    {
-        Tx memory newTransaction = Tx(msg.sender, _StarknetAddress, _network);
+    function starkcetFaucet(
+        bytes32 _StarknetAddress,
+        uint8 _network
+    ) public whenNotPaused {
         lastIdx += 1;
-        transaction[lastIdx] = newTransaction;
         emit StarkcetTx(msg.sender, _StarknetAddress, _network, lastIdx);
     }
 

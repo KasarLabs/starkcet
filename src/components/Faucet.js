@@ -25,7 +25,7 @@ const starknetProvider = new starknet.Provider({
 const LinkToStarknetTx = (hash) => (
   <div>
     <p>Transaction sent to Starknet!</p>
-    <ClickableLink onClick={() => window.open('https://testnet.starkscan.co/tx/' + hash)}>
+    <ClickableLink onClick={() => window.open('https://goerli.voyager.online/tx/' + hash)}>
       {`0x${hash.slice(2, 5)}...${hash.substr(hash.length - 3)}`}
     </ClickableLink>
   </div>

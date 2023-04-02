@@ -84,7 +84,7 @@ export default function LastsTransactions() {
       const filter = {
         address: contractAddress,
         topics: [
-          ethers.utils.id("StarkcetTx(address,bytes32,uint8,uint256)")]
+          ethers.utils.id("StarkcetTx(address,bytes32,uint8,uint64)")]
       }
       const currentBlockNumber = await provider.getBlockNumber();
       let events = await contract.queryFilter(filter, (currentBlockNumber - 20000));

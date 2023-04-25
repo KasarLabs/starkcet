@@ -65,7 +65,7 @@ function Faucet() {
     const receipt = await tx.wait()
     setStep(2)
     const id = parseInt(receipt.logs[0].data, 16)
-    const response = await fetch('https://api.kasar.io:4000/hash?id=' + id);
+    const response = await fetch('https://api-starkcet.kasar.io:4000/hash?id=' + id);
     const data = await response.json()
     toast.info(LinkToStarknetTx(data._res._hash))
     console.log("data received :")

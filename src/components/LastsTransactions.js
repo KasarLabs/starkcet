@@ -5,8 +5,7 @@ import styled from 'styled-components';
 import Skeleton from '@mui/material/Skeleton';
 import './style/index.css'
 
-const provider = new ethers.providers.JsonRpcProvider("https://ethereum.publicnode.com");
-const contractAddress = "0xA627B6407398ADfeA322Bc5B858A05585E35D1de"
+
 
 function createData(hash, network, to, time) {
   return { hash, network, to, time };
@@ -71,9 +70,10 @@ function LastTxTable(props) {
 
 export default function LastsTransactions() {
   const [transactions, setTransactions] = useState([]);
-
   // Set up a polling interval to update the transactions in real-time
   useEffect(() => {
+    const provider = new ethers.providers.JsonRpcProvider("https://ethereum.publicnode.com");
+    const contractAddress = "0xA627B6407398ADfeA322Bc5B858A05585E35D1de"
     const interval = setInterval(async () => {
       // Retrieve the last 5 transactions from the smart contract using Ethers.js
       const contract = new ethers.Contract(
